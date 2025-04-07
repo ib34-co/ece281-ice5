@@ -108,7 +108,7 @@ begin
 		w_up_down <= '1'; 
 		
 		-- go up a floor
-        w_stop <= '0';  wait for k_clk_period;
+        w_stop <= '0';  wait for k_clk_period*2;
             assert w_floor = x"3" report "bad up from floor2" severity failure;
 		-- try waiting on a floor
         w_stop <= '1';  wait for k_clk_period * 2;
